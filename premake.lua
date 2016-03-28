@@ -6,6 +6,7 @@ solution "Math-Test"
       kind "ConsoleApp"
       language "C++"
       files { "**.h", "**.c", "**.hpp", "**.cpp"}
+      includedirs { "../math/", "./" }
  
       configuration "Debug"
          defines { "DEBUG" }
