@@ -55,5 +55,6 @@ TEST_CASE("Vector 3")
   
   SECTION("Equality")
   {
+    
   }
 }
