@@ -18,7 +18,7 @@ TEST_CASE("Vector 2")
   REQUIRE(math::vec2_get_x(four_five) == 4.f);
   REQUIRE(math::vec2_get_y(four_five) == 5.f);
   
-  const float error = 0.01f; // Error for near tests
+  const float error = 0.0001f; // Error for near tests
   
   
   SECTION("Export data")
