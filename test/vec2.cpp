@@ -2,6 +2,7 @@
 #include <math/vec/vec2.hpp>
 #include <array>
 
+
 TEST_CASE("Vector 2")
 {
   // Initialize test data that we will use
@@ -89,22 +90,22 @@ TEST_CASE("Vector 2")
   
   SECTION("Lerp")
   {
-    const math::vec2 erp_start = math::vec2_zero();
-    const math::vec2 erp_end   = math::vec2_one();
+    const math::vec2 lerp_start = math::vec2_zero();
+    const math::vec2 lerp_end   = math::vec2_one();
 
-    const math::vec2 dt_0 = vec2_lerp(erp_start, erp_end, 0.f);
+    const math::vec2 dt_0 = vec2_lerp(lerp_start, lerp_end, 0.f);
     REQUIRE(math::vec2_is_near(dt_0, math::vec2_zero(), error));
 
-    const math::vec2 dt_025 = vec2_lerp(erp_start, erp_end, 0.25f);
+    const math::vec2 dt_025 = vec2_lerp(lerp_start, lerp_end, 0.25f);
     REQUIRE(math::vec2_is_near(dt_025, math::vec2_init(0.25f, 0.25f), error));
 
-    const math::vec2 dt_05 = vec2_lerp(erp_start, erp_end, 0.5f);
+    const math::vec2 dt_05 = vec2_lerp(lerp_start, lerp_end, 0.5f);
     REQUIRE(math::vec2_is_near(dt_05, math::vec2_init(0.5f, 0.5f), error));
 
-    const math::vec2 dt_075 = vec2_lerp(erp_start, erp_end, 0.75f);
+    const math::vec2 dt_075 = vec2_lerp(lerp_start, lerp_end, 0.75f);
     REQUIRE(math::vec2_is_near(dt_075, math::vec2_init(0.75f, 0.75f), error));
 
-    const math::vec2 dt_1 = vec2_lerp(erp_start, erp_end, 1.f);
+    const math::vec2 dt_1 = vec2_lerp(lerp_start, lerp_end, 1.f);
     REQUIRE(math::vec2_is_near(dt_1, math::vec2_one(), error));
   }
   
@@ -112,14 +113,14 @@ TEST_CASE("Vector 2")
   SECTION("Normalize")
   {
     const math::vec2 normalize_vec = vec2_normalize(one_two);
-    CHECK(math::vec2_is_near(normalize_vec, math::vec2_init(0.4472f, 0.89442f), error));
+    REQUIRE(math::vec2_is_near(normalize_vec, math::vec2_init(0.4472f, 0.89442f), error));
   }
   
   
   SECTION("Dot Product")
   {
     const float dot_prod = vec2_dot(math::vec2_init(1.1f, 2.2f), math::vec2_init(2.2f));
-    CHECK(math::is_near(dot_prod, 7.26f, error));
+    REQUIRE(math::is_near(dot_prod, 7.26f, error));
   }
   
   
@@ -127,6 +128,6 @@ TEST_CASE("Vector 2")
   {
     const math::vec2 one_two = math::vec2_init(1.1f, 2.2f);
     const float length_of_vec = vec2_length(one_two);
-    CHECK(math::is_near(length_of_vec, 2.4596f, error));
+    REQUIRE(math::is_near(length_of_vec, 2.4596f, error));
   }
 }
