@@ -1,4 +1,7 @@
 #include <catch/catch.hpp>
+
+#define MATH_USE_SIMD
+
 #include <math/vec/vec2.hpp>
 #include <array>
 
