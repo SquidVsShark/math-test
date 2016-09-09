@@ -6,8 +6,11 @@
 #include <array>
 
 
-TEST_CASE("Vector 4")
+TEST_CASE("Vector 4 SIMD")
 {
+  REQUIRE(MATH_ON_SIMD);
+  REQUIRE(MATH_ON_SSE2);
+
   // Initialize test data that we will use
   const math::vec4 one_two_three_four = math::vec4_init(1.f, 2.f, 3.f, 4.f);
   REQUIRE(math::vec4_get_x(one_two_three_four) == 1.f);
