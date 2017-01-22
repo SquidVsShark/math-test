@@ -66,6 +66,7 @@ main()
 
     auto result = end_benchmark(); 
 
+    printf("Force no opt junk: %f02\n", math::get_x(vec_c));
     printf("Addition: %d\n", result);
   }
 
@@ -87,6 +88,7 @@ main()
 
     auto result = end_benchmark(); 
 
+    printf("Force no opt junk: %f02\n", math::get_x(vec_c));
     printf("Subtract: %d\n", result);
   }
 
@@ -107,6 +109,7 @@ main()
 
     auto result = end_benchmark(); 
 
+    printf("Force no opt junk: %f02\n", math::get_x(vec_c));
     printf("Multiply: %d\n", result);
   }
   
@@ -126,6 +129,7 @@ main()
 
     auto result = end_benchmark(); 
 
+    printf("Force no opt junk: %f02\n", dot_accum);
     printf("Dot Prodcut: %d\n", result);
   }
 
@@ -145,6 +149,7 @@ main()
 
     auto result = end_benchmark(); 
 
+    printf("Force no opt junk: %f02\n", math::get_x(cross_accum));
     printf("Cross Prodcut: %d\n", result);
   }
 
